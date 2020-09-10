@@ -13,11 +13,11 @@ namespace Sender
             try
             {
                 FileInfo fileinfo = new FileInfo(file);
-                if (!fileinfo.Name.Equals("DateTimeSpaCustomer.csv"))
+                if (fileinfo.Name.Equals("DateTimeSpaCustomer.csv") && CheckFileExtension(file))
                 {
-                    return false;
+                    return true;
                 }
-                return true;
+                return false;
             }
             catch (Exception e)
             {
@@ -48,7 +48,7 @@ namespace Sender
         {
             try
             {
-                if (File.Exists(file))
+                if (File.Exists(file) && CheckFilename(file))
                 {
                     return true;
                 }

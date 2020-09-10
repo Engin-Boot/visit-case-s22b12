@@ -19,6 +19,7 @@ namespace Sender
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
@@ -47,6 +48,7 @@ namespace Sender
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
@@ -62,8 +64,9 @@ namespace Sender
                 dt = CSVToDatatable.AddRows(dt,sr, headers);
                 return dt;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
