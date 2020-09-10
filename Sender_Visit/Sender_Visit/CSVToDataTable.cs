@@ -22,20 +22,26 @@ namespace Sender
                 return null;
             }
         }
+        public static DataTable AddNewRows(DataTable dt,String[] Header,StreamReader sr)
+        {
+            string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+            DataRow dr = dt.NewRow();
 
+           
+            for (int i = 0; i < Header.Length; i++)
+            {
+                dr[i] = rows[i];
+            }
+            dt.Rows.Add(dr);
+            return dt;
+        }
         public static DataTable AddRows(DataTable dt,StreamReader sr,String[] Header)
         {
             try
             {
                 while (!sr.EndOfStream)
                 {
-                    string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-                    DataRow dr = dt.NewRow();
-                    for (int i = 0; i < Header.Length; i++)
-                    {
-                        dr[i] = rows[i];
-                    }
-                    dt.Rows.Add(dr);
+                    dt = AddNewRows(dt, Header, sr);
                 }
                 return dt;
             }
@@ -58,7 +64,6 @@ namespace Sender
             }
             catch (System.Exception e)
             {
-                Console.WriteLine(e.Message);
                 return null;
             }
         }
