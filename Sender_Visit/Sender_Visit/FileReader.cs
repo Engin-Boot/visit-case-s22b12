@@ -8,39 +8,43 @@ namespace Sender
 
     class FileReader
     {
-        public bool CheckFilename(String file)
+        bool fileexists = false;
+        public void CheckFilename(String file)
         {
             try
             {
                 FileInfo fileinfo = new FileInfo(file);
-                if (fileinfo.Name.Equals("DateTimeSpaCustomer.csv") && CheckFileExtension(file))
+                if (fileinfo.Name.Equals("DateTimeSpaCustomer.csv"))
                 {
-                    return true;
+                    fileexists = true;
+                    return;
                 }
-                return false;
+                fileexists = false;
+                return;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
+                return;
             }
         }
 
-        public bool CheckFileExtension(String file)
+        public void CheckFileExtension(String file)
         {
             try
             {
                 FileInfo fileinfo = new FileInfo(file);
-                if (!fileinfo.Extension.Equals(".csv"))
+                if (fileinfo.Extension.Equals(".csv"))
                 {
-                    return false;
+                    fileexists = true;
+                    return;
                 }
-                return true;
+                fileexists = false;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
+                return;
             }
         }
 
@@ -48,7 +52,10 @@ namespace Sender
         {
             try
             {
-                if (File.Exists(file) && CheckFilename(file))
+                CheckFilename(file);
+                CheckFileExtension(file);
+                Console.WriteLine(fileexists);
+                if (File.Exists(file) && fileexists)
                 {
                     return true;
                 }
