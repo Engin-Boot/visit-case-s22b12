@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\320090678\\source\\repos\\Receiver_Visit\\Receiver_Visit\\Receiver_Visit.csproj",
+      "projectUniqueName": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Receiver_Visit\\Receiver_Visit\\Receiver_Visit.csproj",
       "projectName": "Receiver_Visit",
-      "projectPath": "C:\\Users\\320090678\\source\\repos\\Receiver_Visit\\Receiver_Visit\\Receiver_Visit.csproj",
+      "projectPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Receiver_Visit\\Receiver_Visit\\Receiver_Visit.csproj",
       "packagesPath": "C:\\Users\\320090678\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\320090678\\source\\repos\\Receiver_Visit\\Receiver_Visit\\obj\\",
+      "outputPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Receiver_Visit\\Receiver_Visit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\320090678\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -22,8 +22,6 @@ namespace Sender
                 {
                     Console.WriteLine(columns.ToString());
                 }
-                int Rows = dt.Rows.Count;
-                Console.WriteLine(Rows);
                 for (int i = 0; i < Rows; i++)
                 {
                     for (int j = 0; j < Columns; j++)
