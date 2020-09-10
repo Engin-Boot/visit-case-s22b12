@@ -1,4 +1,4 @@
-name: Anagram-selector
+name: BuildAndRun
 
 on:
   push:
