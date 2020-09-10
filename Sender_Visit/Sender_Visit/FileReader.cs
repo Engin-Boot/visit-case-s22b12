@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Sender
+namespace Sender_Visit
 {
 
-    class FileReader
+    public class FileReader
     {
         bool fileexists = true;
         public void CheckFilename(String file)
@@ -16,7 +16,6 @@ namespace Sender
                 FileInfo fileinfo = new FileInfo(file);
                 if (fileinfo.Name.Equals("DateTimeSpaCustomer.csv"))
                 {
-                   
                     return;
                 }
                 fileexists = false;
@@ -36,7 +35,6 @@ namespace Sender
                 FileInfo fileinfo = new FileInfo(file);
                 if (fileinfo.Extension.Equals(".csv"))
                 {
-                   
                     return;
                 }
                 fileexists = false;

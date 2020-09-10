@@ -3,9 +3,9 @@ using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Sender
+namespace Sender_Visit
 {
-    class CSVToDatatable
+   public class CSVToDatatable
     {
         public static DataTable AddColumns(DataTable dt,String[] headers)
         {
@@ -61,7 +61,7 @@ namespace Sender
                 string[] headers = sr.ReadLine().Split(',');
                 DataTable dt = new DataTable();
                 dt = CSVToDatatable.AddColumns(dt,headers);
-                dt = CSVToDatatable.AddRows(dt,sr, headers);
+                dt = CSVToDatatable.AddRows(dt, sr, headers);
                 return dt;
             }
             catch (Exception e)

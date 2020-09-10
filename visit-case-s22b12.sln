@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender_Visit", "..\Sender_Visit\Sender_Visit\Sender_Visit.csproj", "{A876AFB2-685F-40B1-8173-EB98D6C8F845}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver_Visit", "..\Receiver_Visit\Receiver_Visit\Receiver_Visit.csproj", "{4714A6BC-CF3C-48A9-ACE7-CDB48F91F7C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A876AFB2-685F-40B1-8173-EB98D6C8F845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A876AFB2-685F-40B1-8173-EB98D6C8F845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A876AFB2-685F-40B1-8173-EB98D6C8F845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A876AFB2-685F-40B1-8173-EB98D6C8F845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4714A6BC-CF3C-48A9-ACE7-CDB48F91F7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4714A6BC-CF3C-48A9-ACE7-CDB48F91F7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4714A6BC-CF3C-48A9-ACE7-CDB48F91F7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4714A6BC-CF3C-48A9-ACE7-CDB48F91F7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A5F0235-D402-41C4-BFAA-BCE548A44778}
+	EndGlobalSection
+EndGlobal

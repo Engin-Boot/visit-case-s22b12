@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\Sender_Visit_UnitTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj",
+        "projectName": "Sender_Visit",
+        "projectPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj",
+        "packagesPath": "C:\\Users\\320090678\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\320090678\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\Sender_Visit_UnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\Sender_Visit_UnitTest.csproj",
+        "projectName": "Sender_Visit_UnitTest",
+        "projectPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\Sender_Visit_UnitTest.csproj",
+        "packagesPath": "C:\\Users\\320090678\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\320090678\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj": {
+                "projectPath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.7.1, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

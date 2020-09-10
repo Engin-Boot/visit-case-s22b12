@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Data;
-namespace Sender
+
+namespace Sender_Visit
 {
-    class Program
+    public class Program
     {
         static public void WriteOnConsole(DataTable dt)
         {
@@ -34,7 +35,6 @@ namespace Sender
             if (fileReader.CheckFileExists(path))
             {
                 dt = CSVToDatatable.ConvertCSVtoDataTable(path);
-                
             }
             if(dt!=null)
             {
