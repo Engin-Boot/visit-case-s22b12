@@ -7,6 +7,44 @@ namespace Sender
 {
     class CSVToDatatable
     {
+        public static DataTable AddColumns(DataTable dt,String[] headers)
+        {
+            try
+            {
+                foreach (string header in headers)
+                {
+                    dt.Columns.Add(header);
+                }
+                return dt;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static DataTable AddRows(DataTable dt,StreamReader sr,String[] Header)
+        {
+            try
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+                    DataRow dr = dt.NewRow();
+                    for (int i = 0; i < Header.Length; i++)
+                    {
+                        dr[i] = rows[i];
+                    }
+                    dt.Rows.Add(dr);
+                }
+                return dt;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
         public static DataTable ConvertCSVtoDataTable(string strFilePath)
         {
             try
@@ -14,20 +52,8 @@ namespace Sender
                 StreamReader sr = new StreamReader(strFilePath);
                 string[] headers = sr.ReadLine().Split(',');
                 DataTable dt = new DataTable();
-                foreach (string header in headers)
-                {
-                    dt.Columns.Add(header);
-                }
-                while (!sr.EndOfStream)
-                {
-                    string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-                    DataRow dr = dt.NewRow();
-                    for (int i = 0; i < headers.Length; i++)
-                    {
-                        dr[i] = rows[i];
-                    }
-                    dt.Rows.Add(dr);
-                }
+                dt = CSVToDatatable.AddColumns(dt,headers);
+                dt = CSVToDatatable.AddRows(dt,sr, headers);
                 return dt;
             }
             catch (System.Exception e)

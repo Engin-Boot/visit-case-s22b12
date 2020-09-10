@@ -13,7 +13,6 @@ namespace Receiver_Visit
             dt = datatablereader.AddColumns(dt);
             dt = datatablereader.AddRows(dt);
 
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 

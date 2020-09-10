@@ -22,7 +22,7 @@ namespace Sender
                 {
                     Console.WriteLine(columns.ToString());
                 }
-                for (int i = 0; i < Rows; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     for (int j = 0; j < Columns; j++)
                     {
