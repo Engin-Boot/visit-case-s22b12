@@ -1,21 +1,38 @@
-name: Build and Run
- 
-on: 
-    push:
-        branches: [master]
- 
+name: BuildAndRun
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
 jobs:
+
   build:
- 
-    runs-on: windows-latest
- 
+
+    strategy:
+      matrix:
+        configuration: [Debug]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: visit.sln
+      Test_Project_Path: visit.Tests\visit.Tests.csproj    # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup .NET Core
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.100
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: Run unit tests
-      run: dotnet test --no-build --configuration Release
+        dotnet-version: 3.1.101
+
+    - name: Run tests
+      run: dotnet test
