@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Receiver_Visit/1.0.0": {
+        "runtime": {
+          "Receiver_Visit.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Receiver_Visit/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
