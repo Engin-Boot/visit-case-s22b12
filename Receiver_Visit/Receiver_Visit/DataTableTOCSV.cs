@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Receiver_Visit
@@ -9,45 +10,22 @@ namespace Receiver_Visit
     static public class DataTableTOCSV
     {
        
-            public static void ToCSV(this DataTable dtDataTable, string strFilePath)
+            public static void ToCSV(DataTable dt, string strFilePath)
             {
-                StreamWriter sw = new StreamWriter(strFilePath, false);
-                //headers  
-                for (int i = 0; i < dtDataTable.Columns.Count; i++)
-                {
-                    sw.Write(dtDataTable.Columns[i]);
-                    if (i < dtDataTable.Columns.Count - 1)
-                    {
-                        sw.Write(",");
-                    }
-                }
-                sw.Write(sw.NewLine);
-                foreach (DataRow dr in dtDataTable.Rows)
-                {
-                    for (int i = 0; i < dtDataTable.Columns.Count; i++)
-                    {
-                        if (!Convert.IsDBNull(dr[i]))
-                        {
-                            string value = dr[i].ToString();
-                            if (value.Contains(','))
-                            {
-                                value = String.Format("\"{0}\"", value);
-                                sw.Write(value);
-                            }
-                            else
-                            {
-                                sw.Write(dr[i].ToString());
-                            }
-                        }
-                        if (i < dtDataTable.Columns.Count - 1)
-                        {
-                            sw.Write(",");
-                        }
-                    }
-                    sw.Write(sw.NewLine);
-                }
-                sw.Close();
+            StringBuilder sb = new StringBuilder();
+
+            IEnumerable<string> columnNames = dt.Columns.Cast<DataColumn>().
+                                              Select(column => column.ColumnName);
+            sb.AppendLine(string.Join(",", columnNames));
+
+            foreach (DataRow row in dt.Rows)
+            {
+                IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
+                sb.AppendLine(string.Join(",", fields));
             }
+
+            File.WriteAllText(strFilePath, sb.ToString());
+        }
         }
     
 }

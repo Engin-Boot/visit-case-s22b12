@@ -10,24 +10,18 @@ namespace Receiver_Visit
         int Columncount;
         public DataTable AddColumns(DataTable dt)
         {
-            try
-            {
+            
                 Columncount = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < Columncount; i++)
                 {
                     dt.Columns.Add(Console.ReadLine());
                 }
                 return dt;
-            }
-            catch(Exception e)
-            {
-                return null;
-            }
+          
         }
         public DataTable AddRows(DataTable dt)
         {
-            try
-            {
+            
                 string input = Console.ReadLine();
                 while (!string.IsNullOrEmpty(input))
                 {
@@ -36,11 +30,7 @@ namespace Receiver_Visit
                 }
 
                 return dt;
-            }
-            catch(Exception e)
-            {
-                return null;
-            }
+            
         }
     }
 }
