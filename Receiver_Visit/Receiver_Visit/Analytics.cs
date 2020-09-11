@@ -8,7 +8,8 @@ namespace Receiver_Visit
 {
     class Analytics
     {
-        public static List<string> GetDates(int year, int month)
+        Dictionary<String, int> datestorage = new Dictionary<String, int>();
+        public static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
         {
             var dates = new List<String>();
 
@@ -17,9 +18,23 @@ namespace Receiver_Visit
             {
                 string[] datess = date.ToString().Split(" ");
                 dates.Add(datess[0]);
+                dic.Add(datess[0], 0);
             }
 
             return dates;
+        }
+
+        public int FindPeak(Dictionary<String,int> dic)
+        {
+            int max = 0;
+            foreach(String key in dic.Keys)
+            {
+                if(dic[key]>max)
+                {
+                    max = dic[key];
+                }
+            }
+            return max;
         }
 
         public static List<String> AddDaysofaWeek(List<String> dates,DateTime Date)
@@ -33,7 +48,7 @@ namespace Receiver_Visit
             return dates;
         }
 
-        public void AverageInHour(DataTable dt, DateTime Datein)
+        public double AverageInHour(DataTable dt, DateTime Datein)
         {
             string[] date = Datein.Date.ToString().Split(" ");
             int visitcount = 0;
@@ -45,10 +60,10 @@ namespace Receiver_Visit
                     visitcount += 1;
                 }
             }
-            Console.WriteLine(visitcount/8.0);
+            return visitcount/8.0;
         }
 
-        public void AvergaeInweek(DataTable dt, DateTime Date)
+        public double AvergaeInweek(DataTable dt, DateTime Date)
         {
             int visitcount = 0;
             List<String> dates = new List<String>();
@@ -62,27 +77,28 @@ namespace Receiver_Visit
                 }
                     
             }
-            Console.WriteLine(visitcount / 7.0);
+            return visitcount / 7.0;
         }
 
 
 
 
-        public void PeakLastMonth(DataTable dt)
+        public int PeakLastMonth(DataTable dt)
         {
             DateTime date = DateTime.Now;
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
-            List<String> DateInPreviousMonth = GetDates(year,previousmonth);
-            int visitcount = 0;
+            
+            List<String> DateInPreviousMonth = GetDates(year,previousmonth,datestorage);
+            
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (DateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    visitcount += 1;
+                    datestorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
-            Console.WriteLine(visitcount/Convert.ToDouble(DateInPreviousMonth.Count));
+             return FindPeak(datestorage);
            
         }
 
