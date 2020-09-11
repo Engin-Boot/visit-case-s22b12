@@ -4,9 +4,6 @@ using System.Data;
 using System.Text;
 using System.Linq;
 
-
-
-
 namespace Receiver_Visit
 {
     class Analytics
