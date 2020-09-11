@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender_Visit", "Sender_Visi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender_Visit_UnitTest", "Sender_Visit\Sender_Visit_UnitTest\Sender_Visit_UnitTest.csproj", "{2D3208D5-2070-4D50-945A-3F2726E75AF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver_Visit", "Receiver_Visit\Receiver_Visit\Receiver_Visit.csproj", "{57451AC0-3415-428B-9235-6F61B3091EFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver_Visit", "Receiver_Visit\Receiver_Visit\Receiver_Visit.csproj", "{114D2AED-BDE9-4CBE-A088-E87C24C5BB71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{2D3208D5-2070-4D50-945A-3F2726E75AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D3208D5-2070-4D50-945A-3F2726E75AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D3208D5-2070-4D50-945A-3F2726E75AF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57451AC0-3415-428B-9235-6F61B3091EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57451AC0-3415-428B-9235-6F61B3091EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57451AC0-3415-428B-9235-6F61B3091EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57451AC0-3415-428B-9235-6F61B3091EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114D2AED-BDE9-4CBE-A088-E87C24C5BB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114D2AED-BDE9-4CBE-A088-E87C24C5BB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114D2AED-BDE9-4CBE-A088-E87C24C5BB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114D2AED-BDE9-4CBE-A088-E87C24C5BB71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "aLR8GiaQ6lVPqflXYhvW5Ukx/IV+8FfiwwNe9gGMJIUhBuGQPLJvK/hXgCVJOEUidyP3X7vVv41YIEgydqqDcA==",
+  "dgSpecHash": "6Dm9OT9n/QJ8nP4BBv+3CmWGoqez0aMomcMnes4hEmGABXynHsGLi+FhILXXusYpY3Pvdonzg357e9lwoYcU0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Receiver_Visit\\Receiver_Visit\\Receiver_Visit.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\320090678\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

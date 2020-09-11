@@ -28,6 +28,8 @@
 
 using System;
 using System.Data;
+using System.Globalization;
+using System.IO;
 
 
 namespace Receiver_Visit
@@ -36,29 +38,27 @@ namespace Receiver_Visit
     {
         static void Main(string[] args)
         {
+            String file = System.Configuration.ConfigurationManager.AppSettings["filename"];
+            String path = Directory.GetCurrentDirectory();
+            path += @"\" + file;
             DataTable dt = new DataTable();
-            dt.Columns.Add("Time", typeof(DateTime));
-            dt.Columns.Add("source");
-            dt.Rows.Add("2020-01-10 07:12:06.163");
-            dt.Rows.Add("2020-2-10 09:10:06.163");
-            dt.Rows.Add("2020-3-10 09:15:06.163");
-            dt.Rows.Add("2020-4-10 05:14:06.163");
-            dt.Rows.Add("2020-5-10 07:20:06.163");
-            dt.Rows.Add("2020-6-10 08:20:06.163");
-            dt.Rows.Add("2020-11-10 08:20:06.163");
+            dt = CSVToDatatable.ConvertCSVtoDataTable(path);
+            CultureInfo culture = new CultureInfo("en-US");
+            string dateString = "07-01-2020";
+            DateTime date= DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
 
-            foreach (DataRow dataRow in dt.Rows)
+            if(dt!=null)
             {
-                foreach (var item in dataRow.ItemArray)
-                {
-                    Console.WriteLine(item);
-                }
+                Analytics an = new Analytics();
+                an.AverageInHour(dt,date);
+                an.AvergaeInweek(dt, date);
+                an.PeakLastMonth(dt);
+
             }
 
-            Analytics an = new Analytics();
-            an.AverageInHour(dt);
-            an.AvergaeInweek(dt);
-            an.PeakLastMonth(dt);
+            
+
+            
 
 
         }

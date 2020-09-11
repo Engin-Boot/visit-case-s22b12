@@ -5,64 +5,92 @@ using System.Text;
 using System.Linq;
 
 
+
+
 namespace Receiver_Visit
 {
     class Analytics
     {
-        public void AverageInHour(DataTable dt)
+        public static List<string> GetDates(int year, int month)
         {
-            var qry = from row in dt.AsEnumerable()
-                      group row by row.Field<string>("source") into grp
-                      select new
-                      {
-                          source = grp.Key,
-                          avg = new TimeSpan(0, 0, (int)(grp.Average(r => r.Field<DateTime>("Time").TimeOfDay.TotalSeconds))),
-                      };
-            foreach (var grp in qry)
+            var dates = new List<String>();
+
+            // Loop from the first day of the month until we hit the next month, moving forward a day at a time
+            for (var date = new DateTime(year, month, 1); date.Month == month; date = date.AddDays(1))
             {
-                Console.WriteLine(String.Format("average per hour = {0}", grp.avg));
+                string[] datess = date.ToString().Split(" ");
+                dates.Add(datess[0]);
             }
 
+            return dates;
         }
 
-        public void AvergaeInweek(DataTable dt)
+        public static List<String> AddDaysofaWeek(List<String> dates,DateTime Date)
         {
-            var qry = from row in dt.AsEnumerable()
-
-                      group row by row.Field<string>("source") into grp
-                      select new
-                      {
-
-                          source = grp.Key,
-                          avg = new TimeSpan(0, 0, (int)(grp.Average(r => r.Field<DateTime>("Time").TimeOfDay.TotalSeconds))),
-                          //avg2 = new TimeSpan(0, 0, (int)(grp.Average(r => r.Field<DateTime>("Time").TimeOfDay.TotalSeconds))),
-
-
-
-                      };
-            foreach (var grp in qry)
+            for (int i = 0; i < 8; i++)
             {
-                Console.WriteLine(String.Format("average = {0}", grp.avg));
-            }
+                string[] adddays = Date.AddDays(i).ToString().Split(" ");
 
+                dates.Add(adddays[0]);
+            }
+            return dates;
         }
+
+        public void AverageInHour(DataTable dt, DateTime Datein)
+        {
+            string[] date = Datein.Date.ToString().Split(" ");
+            int visitcount = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                var dateintable = dt.Rows[i][0];
+                if (dateintable.Equals(date[0]))
+                {
+                    visitcount += 1;
+                }
+            }
+            Console.WriteLine(visitcount/8.0);
+        }
+
+        public void AvergaeInweek(DataTable dt, DateTime Date)
+        {
+            int visitcount = 0;
+            List<String> dates = new List<String>();
+
+            dates = AddDaysofaWeek(dates, Date);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dates.Contains(dt.Rows[i][0]))
+                {
+                    visitcount += 1;
+                }
+                    
+            }
+            Console.WriteLine(visitcount / 7.0);
+        }
+
+
+
 
         public void PeakLastMonth(DataTable dt)
         {
-            var qry = from row in dt.AsEnumerable()
-                      group row by row.Field<string>("source") into grp
-                      select new
-                      {
-                          source = grp.Key,
-                          avg = new TimeSpan(0,0, (int)(grp.Max(r => r.Field<DateTime>("Time").TimeOfDay.TotalSeconds))),
-
-                      };
-            foreach (var grp in qry)
+            DateTime date = DateTime.Now;
+            var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
+            var year = Convert.ToInt32(DateTime.Now.Year.ToString());
+            List<String> DateInPreviousMonth = GetDates(year,previousmonth);
+            int visitcount = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Console.WriteLine(String.Format("Maximum = {0}", (grp.avg)));
-
-
+                if (DateInPreviousMonth.Contains(dt.Rows[i][0]))
+                {
+                    visitcount += 1;
+                }
             }
+            Console.WriteLine(visitcount/Convert.ToDouble(DateInPreviousMonth.Count));
+           
         }
+
+
+
+
     }
 }
