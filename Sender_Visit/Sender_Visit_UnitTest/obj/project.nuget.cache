@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uUkYVfqDLvorW53afaAE5CpzuVpVIFythTN0S7NsK+F1Hi5b0NWTqNtiCulvqqgLSg6Pjz8FvhPcm9pxTLaQ7A==",
+  "dgSpecHash": "6XFu7WGUijfToJA+8+r6asHqVrT6SXwpQbmULZmXjQthyI37TLbnPT9+MBG6WXLinoGqWjuTZ1Y3NJvSCBeh6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit_UnitTest\\Sender_Visit_UnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\320090678\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\jetbrains.annotations\\2020.1.0\\jetbrains.annotations.2020.1.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\jetbrains.resharper.commandlinetools\\2020.2.2\\jetbrains.resharper.commandlinetools.2020.2.2.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.net.test.sdk\\16.7.1\\microsoft.net.test.sdk.16.7.1.nupkg.sha512",

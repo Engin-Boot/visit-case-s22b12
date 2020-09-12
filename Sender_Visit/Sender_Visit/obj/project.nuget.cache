@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "FuLSPRkj69CoGrNAxkD/oN7WcSOGajlmGcrBKd+BynCK8PjShysadvzTspkFi/lUXnlbzUhkHpoqBH3sucrgJg==",
+  "dgSpecHash": "/LPt1dZ/mKIAb+ehp2u8Yxn93r5m4EkuJ69aRQKC3RPKXhGhrtN7z6RrX+M5CAmQ3bIUBL9UYJMhf2X4mYGC9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\320090678\\source\\repos\\visit-case-s22b12\\Sender_Visit\\Sender_Visit\\Sender_Visit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\320090678\\.nuget\\packages\\jetbrains.annotations\\2020.1.0\\jetbrains.annotations.2020.1.0.nupkg.sha512",
+    "C:\\Users\\320090678\\.nuget\\packages\\jetbrains.resharper.commandlinetools\\2020.2.2\\jetbrains.resharper.commandlinetools.2020.2.2.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\320090678\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

@@ -21,6 +21,7 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\320090678\.nuget\packages\xunit.analyzers\0.10.0</Pkgxunit_analyzers>
+    <PkgJetBrains_ReSharper_CommandLineTools Condition=" '$(PkgJetBrains_ReSharper_CommandLineTools)' == '' ">C:\Users\320090678\.nuget\packages\jetbrains.resharper.commandlinetools\2020.2.2</PkgJetBrains_ReSharper_CommandLineTools>
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\320090678\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
   </PropertyGroup>
 </Project>

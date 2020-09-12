@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DuplicatesReport ToolsVersion="202.0.20200909.170824">
+  <Statistics>
+    <CodebaseCost>5741</CodebaseCost>
+    <TotalDuplicatesCost>746</TotalDuplicatesCost>
+    <TotalFragmentsCost>1492</TotalFragmentsCost>
+  </Statistics>
+  <Duplicates>
+    <Duplicate Cost="582">
+      <Fragment>
+        <FileName>Receiver_Visit\Receiver_Visit\CSVToDataTable.cs</FileName>
+        <OffsetRange Start="120" End="2144"></OffsetRange>
+        <LineRange Start="7" End="84"></LineRange>
+      </Fragment>
+      <Fragment>
+        <FileName>Sender_Visit\Sender_Visit\CSVToDataTable.cs</FileName>
+        <OffsetRange Start="118" End="2116"></OffsetRange>
+        <LineRange Start="7" End="74"></LineRange>
+      </Fragment>
+    </Duplicate>
+    <Duplicate Cost="85">
+      <Fragment>
+        <FileName>Sender_Visit\Sender_Visit_UnitTest\SenderUnittest.cs</FileName>
+        <OffsetRange Start="682" End="938"></OffsetRange>
+        <LineRange Start="25" End="29"></LineRange>
+      </Fragment>
+      <Fragment>
+        <FileName>Sender_Visit\Sender_Visit_UnitTest\SenderUnittest.cs</FileName>
+        <OffsetRange Start="1123" End="1379"></OffsetRange>
+        <LineRange Start="36" End="40"></LineRange>
+      </Fragment>
+    </Duplicate>
+    <Duplicate Cost="79">
+      <Fragment>
+        <FileName>Receiver_Visit\Receiver_Test\Receiver_UnitTest.cs</FileName>
+        <OffsetRange Start="368" End="609"></OffsetRange>
+        <LineRange Start="20" End="24"></LineRange>
+      </Fragment>
+      <Fragment>
+        <FileName>Receiver_Visit\Receiver_Test\Receiver_UnitTest.cs</FileName>
+        <OffsetRange Start="1564" End="1805"></OffsetRange>
+        <LineRange Start="47" End="51"></LineRange>
+      </Fragment>
+    </Duplicate>
+  </Duplicates>
+</DuplicatesReport>

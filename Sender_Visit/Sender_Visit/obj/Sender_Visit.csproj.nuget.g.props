@@ -15,4 +15,7 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.codecoverage\16.7.1\build\netstandard1.0\Microsoft.CodeCoverage.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codecoverage\16.7.1\build\netstandard1.0\Microsoft.CodeCoverage.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgJetBrains_ReSharper_CommandLineTools Condition=" '$(PkgJetBrains_ReSharper_CommandLineTools)' == '' ">C:\Users\320090678\.nuget\packages\jetbrains.resharper.commandlinetools\2020.2.2</PkgJetBrains_ReSharper_CommandLineTools>
+  </PropertyGroup>
 </Project>

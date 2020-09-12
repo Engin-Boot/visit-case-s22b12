@@ -42,6 +42,12 @@
               "target": "Package",
               "version": "[2020.1.0, )"
             },
+            "JetBrains.ReSharper.CommandLineTools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2020.2.2, )"
+            },
             "Microsoft.CodeCoverage": {
               "target": "Package",
               "version": "[16.7.1, )"
