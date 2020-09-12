@@ -28,7 +28,6 @@ namespace Receiver_Visit
                     dt.Rows.Add(Console.ReadLine());
                     input = Console.ReadLine();
                 }
-
                 return dt;
             
         }

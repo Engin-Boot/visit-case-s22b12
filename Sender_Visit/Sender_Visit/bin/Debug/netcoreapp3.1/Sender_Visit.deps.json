@@ -9,6 +9,7 @@
       "Sender_Visit/1.0.0": {
         "dependencies": {
           "JetBrains.Annotations": "2020.1.0",
+          "JetBrains.ReSharper.CommandLineTools": "2020.2.2",
           "Microsoft.CodeCoverage": "16.7.1",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
@@ -24,6 +25,7 @@
           }
         }
       },
+      "JetBrains.ReSharper.CommandLineTools/2020.2.2": {},
       "Microsoft.CodeCoverage/16.7.1": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -158,6 +160,13 @@
       "sha512": "sha512-kD9D2ey3DGeLbfIzS8PkwLFkcF5vCOLk2rdjgfSxTfpoyovl7gAyoS6yq6T77zo9QgJGaVJ7PO/cSgLopnKlzg==",
       "path": "jetbrains.annotations/2020.1.0",
       "hashPath": "jetbrains.annotations.2020.1.0.nupkg.sha512"
+    },
+    "JetBrains.ReSharper.CommandLineTools/2020.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nuCwFxxU6/L0amtlIwXs6y5kNLqz/sND0S7/0DN0t/9SDEf6l2dPfMCJyLG0/AVehhZNMIAsb01Q2Yr4St7d0w==",
+      "path": "jetbrains.resharper.commandlinetools/2020.2.2",
+      "hashPath": "jetbrains.resharper.commandlinetools.2020.2.2.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.7.1": {
       "type": "package",
