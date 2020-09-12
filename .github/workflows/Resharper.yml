@@ -20,5 +20,4 @@ jobs:
       - name: Run resharper duplicate code check
         run: jb dupfinder visit-case-s22b12.sln -o=dupreport.xml
        
-      - name: Check Reports
-        run: powershell ./resharper.ps1
+      
