@@ -21,4 +21,4 @@ jobs:
         run: jb dupfinder visit-case-s22b12.sln -o=dupreport.xml
        
       - name: Check Reports
-        run: powershell ./resharper.ps1
+        run: powershell ./resharper.ps1-linerate 1
