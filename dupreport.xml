@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DuplicatesReport ToolsVersion="202.0.20200909.170824">
+  <Statistics>
+    <CodebaseCost>5308</CodebaseCost>
+    <TotalDuplicatesCost>164</TotalDuplicatesCost>
+    <TotalFragmentsCost>328</TotalFragmentsCost>
+  </Statistics>
+  <Duplicates>
+    <Duplicate Cost="85">
+      <Fragment>
+        <FileName>Sender_Visit\Sender_Visit_UnitTest\SenderUnittest.cs</FileName>
+        <OffsetRange Start="682" End="938"></OffsetRange>
+        <LineRange Start="25" End="29"></LineRange>
+      </Fragment>
+      <Fragment>
+        <FileName>Sender_Visit\Sender_Visit_UnitTest\SenderUnittest.cs</FileName>
+        <OffsetRange Start="1123" End="1379"></OffsetRange>
+        <LineRange Start="36" End="40"></LineRange>
+      </Fragment>
+    </Duplicate>
+    <Duplicate Cost="79">
+      <Fragment>
+        <FileName>Receiver_Visit\Receiver_Test\Receiver_UnitTest.cs</FileName>
+        <OffsetRange Start="313" End="554"></OffsetRange>
+        <LineRange Start="18" End="22"></LineRange>
+      </Fragment>
+      <Fragment>
+        <FileName>Receiver_Visit\Receiver_Test\Receiver_UnitTest.cs</FileName>
+        <OffsetRange Start="1509" End="1750"></OffsetRange>
+        <LineRange Start="45" End="49"></LineRange>
+      </Fragment>
+    </Duplicate>
+  </Duplicates>
+</DuplicatesReport>

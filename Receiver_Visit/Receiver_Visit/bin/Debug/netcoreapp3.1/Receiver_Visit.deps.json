@@ -11,6 +11,7 @@
           "JetBrains.Annotations": "2020.1.0",
           "JetBrains.ReSharper.CommandLineTools": "2020.2.2",
           "Microsoft.CodeCoverage": "16.7.1",
+          "Sender_Visit": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
         "runtime": {
@@ -145,6 +146,16 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "Sender_Visit/1.0.0": {
+        "dependencies": {
+          "JetBrains.Annotations": "2020.1.0",
+          "Microsoft.CodeCoverage": "16.7.1",
+          "System.Configuration.ConfigurationManager": "4.7.0"
+        },
+        "runtime": {
+          "Sender_Visit.dll": {}
+        }
       }
     }
   },
@@ -237,6 +248,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "Sender_Visit/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
