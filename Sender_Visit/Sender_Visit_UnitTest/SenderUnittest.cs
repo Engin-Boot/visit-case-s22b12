@@ -7,14 +7,19 @@ namespace Sender_Visit_UnitTest
 {
     public static class SenderUnittest
     {
+        private static string ReturnPath()
+        {
+            
+            string file = "DateTimeSpaCustomer.csv";
+            string path = Directory.GetCurrentDirectory();
+            path += @"\" + file;
+            return path;
+        }
         [Fact]
         public static void WhenFileisInputedThenItsExistenceisChecked()
         {
             var fr = new FileReader();
-            string file = "DateTimeSpaCustomer.csv";
-            string path = Directory.GetCurrentDirectory();
-            path += @"\" + file;
-            Console.WriteLine(path);
+            String path = ReturnPath();
             Assert.True(fr.CheckFileExists(path));
             
         }
@@ -22,10 +27,8 @@ namespace Sender_Visit_UnitTest
         [Fact]
         public static void WhenCsvFileisConvertedThenDataTableMustBeNotNull()
         {
-            string file = "DateTimeSpaCustomer.csv";
-            string path = Directory.GetCurrentDirectory();
-            path += @"\" + file;
-            Console.WriteLine(path);
+
+            String path = ReturnPath();
             System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.False(dt == null) ;           
         }
@@ -33,10 +36,8 @@ namespace Sender_Visit_UnitTest
         [Fact]
         public static void WhenDatatableisReturnedThenNumberofColumnsMustbe2()
         {
-            string file = "DateTimeSpaCustomer.csv";
-            string path = Directory.GetCurrentDirectory();
-            path += @"\" + file;
-            Console.WriteLine(path);
+
+            String path = ReturnPath();
             System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.True(dt.Columns.Count == 2);
         }

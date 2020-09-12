@@ -11,15 +11,22 @@ namespace Receiver_Test
 {
     public class Receiver_UnitTest 
     {
+
+        private static DataTable Convert(DataTable dt)
+        {
+            String file = "DateTimeSpaCustomer.csv";
+            String path = Directory.GetCurrentDirectory();
+            path += @"\" + file;
+            dt = CsvToDatatable.ConvertCsvtoDatatable(path);
+
+            return dt;
+        }
         [Fact]
         public static void TestCasesForAnlyticModule()
         {
 
             DataTable dt = new DataTable();
-            String file = "DateTimeSpaCustomer.csv";
-            String path = Directory.GetCurrentDirectory();
-            path += @"\" + file;
-            dt = CsvToDatatable.ConvertCsvtoDatatable(path);
+            dt=Convert(dt);
             CultureInfo culture = new CultureInfo("en-US");
             string dateString = "07-07-2020";
             DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
