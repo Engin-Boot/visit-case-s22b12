@@ -4,27 +4,28 @@ using System.Data;
 
 namespace Sender_Visit
 {
-    public class Program
+    public static  class Program
     {
-        static public void WriteOnConsole(DataTable dt)
+        private static void WriteOnConsole(DataTable dt)
         {
-            int Columns = dt.Columns.Count;
+            int _columns = dt.Columns.Count;
 
-            Console.WriteLine(Columns);
+
+            Console.WriteLine(_columns);
             foreach (var columns in dt.Columns)
             {
                 Console.WriteLine(columns.ToString());
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                for (int j = 0; j < Columns; j++)
+                for (int j = 0; j <_columns; j++)
                 {
                     Console.Write(dt.Rows[i][j] + " ");
                 }
                 Console.WriteLine();
             }
         }
-        static void Main(string[] args)
+        static void Main()
         {
             String file = System.Configuration.ConfigurationManager.AppSettings["filename"];
             String path = Directory.GetCurrentDirectory();
@@ -34,12 +35,12 @@ namespace Sender_Visit
             DataTable dt = null;
             if (fileReader.CheckFileExists(path))
             {
-                dt = CsvToDatatable.ConvertCSVtoDataTable(path);
+                dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             }
             if(dt!=null)
             {
                 WriteOnConsole(dt);
-                return;
+                
             }
         }
     }

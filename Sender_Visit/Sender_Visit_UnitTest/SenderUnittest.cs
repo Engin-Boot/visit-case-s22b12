@@ -1,16 +1,16 @@
-﻿using Xunit;
-using Sender_Visit;
+﻿using Sender_Visit;
 using System.IO;
 using System;
+using Xunit;
 
 namespace Sender_Visit_UnitTest
 {
-    public class SenderUnittest
+    public static class SenderUnittest
     {
         [Fact]
         public static void WhenFileisInputedThenItsExistenceisChecked()
         {
-            var fr = new Sender_Visit.FileReader();
+            var fr = new FileReader();
             string file = "DateTimeSpaCustomer.csv";
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
@@ -20,13 +20,13 @@ namespace Sender_Visit_UnitTest
         }
 
         [Fact]
-        public static void WhenCSVFileisConvertedThenDataTableMustBeNotNull()
+        public static void WhenCsvFileisConvertedThenDataTableMustBeNotNull()
         {
             string file = "DateTimeSpaCustomer.csv";
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
             Console.WriteLine(path);
-            System.Data.DataTable dt = CsvToDatatable.ConvertCSVtoDataTable(path);
+            System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.False(dt == null) ;           
         }
 
@@ -37,7 +37,7 @@ namespace Sender_Visit_UnitTest
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
             Console.WriteLine(path);
-            System.Data.DataTable dt = CsvToDatatable.ConvertCSVtoDataTable(path);
+            System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.True(dt.Columns.Count == 2);
         }
  

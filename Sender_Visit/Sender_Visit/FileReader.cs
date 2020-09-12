@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.IO;
-using System.Text;
+
 
 namespace Sender_Visit
 {
 
     public class FileReader
     {
-        bool fileexists = true;
-        public void CheckFilename(String file)
+        bool _fileexists = true;
+        private void CheckFilename(String file)
         {
             try
             {
@@ -18,17 +18,16 @@ namespace Sender_Visit
                 {
                     return;
                 }
-                fileexists = false;
-                return;
+                _fileexists = false;
+                
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return;
             }
         }
 
-        public void CheckFileExtension(String file)
+        private void CheckFileExtension(String file)
         {
             try
             {
@@ -37,16 +36,16 @@ namespace Sender_Visit
                 {
                     return;
                 }
-                fileexists = false;
+                _fileexists = false;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return;
+               
             }
         }
 
-        public void CheckFileLocation(String file)
+        private void CheckFileLocation(String file)
         {
             try
             {
@@ -56,12 +55,12 @@ namespace Sender_Visit
 
                     return;
                 }
-                fileexists = false;
+                _fileexists = false;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return;
+                
             }
         }
         public bool CheckFileExists(String file)
@@ -71,7 +70,7 @@ namespace Sender_Visit
                 CheckFilename(file);
                 CheckFileExtension(file);
                 CheckFileLocation(file);
-                if (fileexists)
+                if (_fileexists)
                 {
                     return true;
                 }

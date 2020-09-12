@@ -61,7 +61,7 @@ namespace Receiver_Visit
                     String file = System.Configuration.ConfigurationManager.AppSettings["filename"];
                     String path = Directory.GetCurrentDirectory();
                     path += @"\" + file;
-                    dt = CsvToDatatable.ConvertCSVtoDataTable(path);
+                    dt = CsvToDatatable.ConvertCsvtoDatatable(path);
 
                 }
                 catch (Exception)

@@ -7,7 +7,7 @@ namespace Sender_Visit
 {
    public static class CsvToDatatable
     {
-        public static DataTable AddColumns(DataTable dt,String[] headers)
+        private static DataTable AddColumns(DataTable dt,String[] headers)
         {
             try
             {
@@ -17,43 +17,44 @@ namespace Sender_Visit
                 }
                 return dt;
             }
-            catch(Exception e)
+            catch(Exception )
             {
-                Console.WriteLine(e.Message);
+                
                 return null;
             }
         }
-        public static DataTable AddNewRows(DataTable dt,String[] Header,StreamReader sr)
+        private static DataTable AddNewRows(DataTable dt,String[] header,StreamReader sr)
         {
+            
             string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
             DataRow dr = dt.NewRow();
 
            
-            for (int i = 0; i < Header.Length; i++)
+            for (int i = 0; i < header.Length; i++)
             {
                 dr[i] = rows[i];
             }
             dt.Rows.Add(dr);
             return dt;
         }
-        public static DataTable AddRows(DataTable dt,StreamReader sr,String[] Header)
+        private static DataTable AddRows(DataTable dt,StreamReader sr,String[] header)
         {
             try
             {
                 while (!sr.EndOfStream)
                 {
-                    dt = AddNewRows(dt, Header, sr);
+                    dt = AddNewRows(dt, header, sr);
                 }
                 return dt;
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                Console.WriteLine(e.Message);
+                
                 return null;
             }
         }
 
-        public static DataTable ConvertCSVtoDataTable(string strFilePath)
+        public static DataTable ConvertCsvtoDatatable(string strFilePath)
         {
             try
             {
@@ -64,9 +65,9 @@ namespace Sender_Visit
                 dt = CsvToDatatable.AddRows(dt, sr, headers);
                 return dt;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
+               
                 return null;
             }
         }
