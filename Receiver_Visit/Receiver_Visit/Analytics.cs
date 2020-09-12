@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Linq;
+using System.IO;
 
 namespace Receiver_Visit
 {
-    class Analytics
+    public class Analytics
     {
         Dictionary<String, int> datestorage = new Dictionary<String, int>();
         public static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
@@ -24,7 +25,7 @@ namespace Receiver_Visit
             return dates;
         }
 
-        public int FindPeak(Dictionary<String,int> dic)
+        public static int FindPeak(Dictionary<String,int> dic)
         {
             int max = 0;
             foreach(String key in dic.Keys)
@@ -48,7 +49,7 @@ namespace Receiver_Visit
             return dates;
         }
 
-        public double AverageInHour(DataTable dt, DateTime Datein)
+        public static double AverageInHour(DataTable dt, DateTime Datein)
         {
             string[] date = Datein.Date.ToString().Split(" ");
             int visitcount = 0;
@@ -63,7 +64,7 @@ namespace Receiver_Visit
             return visitcount/8.0;
         }
 
-        public double AvergaeInweek(DataTable dt, DateTime Date)
+        public static double AvergaeInweek(DataTable dt, DateTime Date)
         {
             int visitcount = 0;
             List<String> dates = new List<String>();
@@ -83,22 +84,23 @@ namespace Receiver_Visit
 
 
 
-        public int PeakLastMonth(DataTable dt)
+        public static int PeakLastMonth(DataTable dt)
         {
+            Analytics obj = new Analytics();
             DateTime date = DateTime.Now;
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
             
-            List<String> DateInPreviousMonth = GetDates(year,previousmonth,datestorage);
+            List<String> DateInPreviousMonth = GetDates(year,previousmonth, obj.datestorage);
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (DateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    datestorage[dt.Rows[i][0].ToString()] += 1;
+                    obj.datestorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
-             return FindPeak(datestorage);
+             return FindPeak(obj.datestorage);
            
         }
 
