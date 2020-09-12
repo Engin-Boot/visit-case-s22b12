@@ -14,7 +14,7 @@ namespace Receiver_Test
     public class Receiver_UnitTest 
     {
         [Fact]
-        public static void TestCasesForAnlyticsModule()
+        public static void TestCasesForAnlyticModule()
         {
 
             DataTable dt = new DataTable();
