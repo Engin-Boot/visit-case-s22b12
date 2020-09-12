@@ -53,13 +53,11 @@ namespace Receiver_Visit
 
             if(dt!=null)
             {
-                Analytics an = new Analytics();
+                
                 double avghour=Analytics.AverageInHour(dt,date);
                 double avgweek= Analytics.AvergaeInweek(dt, date);
                 int avgpeak= Analytics.PeakLastMonth(dt);
-                Console.WriteLine(avghour);
-                Console.WriteLine(avgweek);
-                Console.WriteLine(avgpeak);
+                
 
                 DataTable dtresults = new DataTable();
 

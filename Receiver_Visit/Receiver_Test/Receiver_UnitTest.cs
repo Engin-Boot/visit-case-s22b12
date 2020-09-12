@@ -18,7 +18,10 @@ namespace Receiver_Test
         {
 
             DataTable dt = new DataTable();
-            dt = CSVToDatatable.ConvertCSVtoDataTable(@"C:\Users\320087401\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\DateTimeSpaCustomer.csv");
+            String file = "DateTimeSpaCustomer.csv";
+            String path = Directory.GetCurrentDirectory();
+            path += @"\" + file;
+            dt = CSVToDatatable.ConvertCSVtoDataTable(path);
             CultureInfo culture = new CultureInfo("en-US");
             string dateString = "07-07-2020";
             DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
@@ -41,7 +44,11 @@ namespace Receiver_Test
         [Fact]
         public static void WhenCSVFileisConvertedThenDataTableMustBeNotNull()
         {
-            System.Data.DataTable dt = CSVToDatatable.ConvertCSVtoDataTable(@"C:\Users\320087401\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\DateTimeSpaCustomer.csv");
+            DataTable dt = new DataTable();
+            String file = "DateTimeSpaCustomer.csv";
+            String path = Directory.GetCurrentDirectory();
+            path += @"\" + file;
+            dt = CSVToDatatable.ConvertCSVtoDataTable(path);
             Assert.False(dt == null);
         }
 
