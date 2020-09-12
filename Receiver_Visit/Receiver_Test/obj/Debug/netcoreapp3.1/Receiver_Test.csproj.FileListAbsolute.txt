@@ -10,7 +10,6 @@ C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\o
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
-C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\obj\Debug\netcoreapp3.1\Receiver_Test.csproj.CoreCompileInputs.cache
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\Receiver_Visit.exe
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -111,3 +110,4 @@ C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\b
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\obj\Debug\netcoreapp3.1\Receiver_Test.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\obj\Debug\netcoreapp3.1\Receiver_Test.pdb
 C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\obj\Debug\netcoreapp3.1\Receiver_Test.genruntimeconfig.cache
+C:\Users\320090678\source\repos\visit-case-s22b12\Receiver_Visit\Receiver_Test\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll

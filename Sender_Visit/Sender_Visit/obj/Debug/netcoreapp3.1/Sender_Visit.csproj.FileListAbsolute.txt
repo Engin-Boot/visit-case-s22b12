@@ -27,7 +27,6 @@ C:\Users\320090678\source\repos\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.csprojAssemblyReference.cache
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.AssemblyInfoInputs.cache
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.AssemblyInfo.cs
-C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.csproj.CoreCompileInputs.cache
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.pdb
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\Debug\netcoreapp3.1\Sender_Visit.exe
@@ -50,3 +49,4 @@ C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.csproj.CopyComplete
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.genruntimeconfig.cache
+C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
