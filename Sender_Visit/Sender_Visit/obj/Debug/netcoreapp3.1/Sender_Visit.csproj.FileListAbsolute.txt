@@ -51,3 +51,4 @@ C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.csproj.CoreCompileInputs.cache
+C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.csprojAssemblyReference.cache
