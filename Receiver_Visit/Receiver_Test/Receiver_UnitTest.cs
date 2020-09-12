@@ -40,13 +40,13 @@ namespace Receiver_Test
         }
 
         [Fact]
-        public static void WhenCSVFileisConvertedThenDataTableMustBeNotNull()
+        public static void WhencsvFileisConvertedThenDataTableBeNotNull()
         {
             DataTable dt = new DataTable();
-            String file = "DateTimeSpaCustomer.csv";
-            String path = Directory.GetCurrentDirectory();
-            path += @"\" + file;
-            dt = CSVToDatatable.ConvertCSVtoDataTable(path);
+            String filename = "DateTimeSpaCustomer.csv";
+            String pathname = Directory.GetCurrentDirectory();
+            pathname += @"\" + filename;
+            dt = CSVToDatatable.ConvertCSVtoDataTable(pathname);
             Assert.False(dt == null);
         }
 

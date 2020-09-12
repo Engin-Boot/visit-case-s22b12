@@ -34,7 +34,7 @@ namespace Sender_Visit
             DataTable dt = null;
             if (fileReader.CheckFileExists(path))
             {
-                dt = CSVToDatatable.ConvertCSVtoDataTable(path);
+                dt = CsvToDatatable.ConvertCSVtoDataTable(path);
             }
             if(dt!=null)
             {

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Sender_Visit
 {
-   public class CSVToDatatable
+   public static class CsvToDatatable
     {
         public static DataTable AddColumns(DataTable dt,String[] headers)
         {
@@ -60,8 +60,8 @@ namespace Sender_Visit
                 StreamReader sr = new StreamReader(strFilePath);
                 string[] headers = sr.ReadLine().Split(',');
                 DataTable dt = new DataTable();
-                dt = CSVToDatatable.AddColumns(dt,headers);
-                dt = CSVToDatatable.AddRows(dt, sr, headers);
+                dt = CsvToDatatable.AddColumns(dt,headers);
+                dt = CsvToDatatable.AddRows(dt, sr, headers);
                 return dt;
             }
             catch (Exception e)

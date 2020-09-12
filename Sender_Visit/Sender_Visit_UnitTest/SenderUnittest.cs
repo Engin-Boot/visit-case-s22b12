@@ -26,7 +26,7 @@ namespace Sender_Visit_UnitTest
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
             Console.WriteLine(path);
-            System.Data.DataTable dt = CSVToDatatable.ConvertCSVtoDataTable(path);
+            System.Data.DataTable dt = CsvToDatatable.ConvertCSVtoDataTable(path);
             Assert.False(dt == null) ;           
         }
 
@@ -37,7 +37,7 @@ namespace Sender_Visit_UnitTest
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
             Console.WriteLine(path);
-            System.Data.DataTable dt = CSVToDatatable.ConvertCSVtoDataTable(path);
+            System.Data.DataTable dt = CsvToDatatable.ConvertCSVtoDataTable(path);
             Assert.True(dt.Columns.Count == 2);
         }
  
