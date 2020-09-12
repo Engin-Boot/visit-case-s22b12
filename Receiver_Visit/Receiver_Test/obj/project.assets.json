@@ -1808,6 +1808,7 @@
         "dependencies": {
           "JetBrains.Annotations": "2020.1.0",
           "Microsoft.CodeCoverage": "16.7.1",
+          "Sender_Visit": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
         "compile": {
@@ -1815,6 +1816,21 @@
         },
         "runtime": {
           "bin/placeholder/Receiver_Visit.dll": {}
+        }
+      },
+      "Sender_Visit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "JetBrains.Annotations": "2020.1.0",
+          "Microsoft.CodeCoverage": "16.7.1",
+          "System.Configuration.ConfigurationManager": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Sender_Visit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sender_Visit.dll": {}
         }
       }
     }
@@ -7902,6 +7918,11 @@
       "type": "project",
       "path": "../Receiver_Visit/Receiver_Visit.csproj",
       "msbuildProject": "../Receiver_Visit/Receiver_Visit.csproj"
+    },
+    "Sender_Visit/1.0.0": {
+      "type": "project",
+      "path": "../../Sender_Visit/Sender_Visit/Sender_Visit.csproj",
+      "msbuildProject": "../../Sender_Visit/Sender_Visit/Sender_Visit.csproj"
     }
   },
   "projectFileDependencyGroups": {
