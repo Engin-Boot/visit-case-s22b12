@@ -1,12 +1,10 @@
 using Xunit;
 using Receiver_Visit;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
-using System.Linq;
 using System.IO;
 using System.Globalization;
+using Sender_Visit;
 
 
 namespace Receiver_Test

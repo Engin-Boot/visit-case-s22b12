@@ -28,4 +28,10 @@
     <ProjectReference Include="..\Receiver_Visit\Receiver_Visit.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Sender_Visit">
+      <HintPath>..\..\Sender_Visit\Sender_Visit\obj\Debug\netcoreapp3.1\Sender_Visit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
