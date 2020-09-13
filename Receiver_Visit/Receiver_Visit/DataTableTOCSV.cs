@@ -1,4 +1,3 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -7,10 +6,10 @@ using System.Text;
 
 namespace Receiver_Visit
 {
-    static public class DataTableTOCSV
+    public static class DataTableTocsv
     {
        
-            public static void ToCSV(DataTable dt, string strFilePath)
+            public static void ToCsv(DataTable dt, string strFilePath)
             {
             StringBuilder sb = new StringBuilder();
 
