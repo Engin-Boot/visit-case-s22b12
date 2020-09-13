@@ -97,7 +97,7 @@ namespace Receiver_Visit
             {
                 if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    obj.Datestorage[dt.Rows[i][0].ToString() ?? throw new InvalidOperationException()] += 1;
+                   obj.datestorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
             return FindPeak(obj.Datestorage);           
