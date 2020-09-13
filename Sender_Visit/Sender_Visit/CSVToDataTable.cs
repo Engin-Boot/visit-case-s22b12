@@ -13,6 +13,7 @@ namespace Sender_Visit
             {
                 foreach (string header in headers)
                 {
+                   
                     dt.Columns.Add(header);
                 }
                 return dt;
@@ -25,18 +26,22 @@ namespace Sender_Visit
         }
         private static DataTable AddNewRows(DataTable dt,String[] header,StreamReader sr)
         {
-            
-            string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-            DataRow dr = dt.NewRow();
-
-           
-            for (int i = 0; i < header.Length; i++)
+            var stringreader = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+            if (stringreader != null)
             {
-                dr[i] = rows[i];
+                
+                string[] rows = stringreader;
+                DataRow dr = dt.NewRow();
+                for (int i = 0; i < header.Length; i++)
+                {
+                    dr[i] = rows[i];
+                }
+                dt.Rows.Add(dr);
+                return dt;
             }
-            dt.Rows.Add(dr);
-            return dt;
-        }
+            return null;
+
+           }
         private static DataTable AddRows(DataTable dt,StreamReader sr,String[] header)
         {
             try
@@ -59,15 +64,25 @@ namespace Sender_Visit
             try
             {
                 StreamReader sr = new StreamReader(strFilePath);
-                string[] headers = sr.ReadLine().Split(',');
-                DataTable dt = new DataTable();
-                dt = CsvToDatatable.AddColumns(dt,headers);
-                dt = CsvToDatatable.AddRows(dt, sr, headers);
-                return dt;
+
+                var stringreader = sr.ReadLine().Split(',');
+                if (stringreader != null)
+                {
+                    
+                    string[] headers = stringreader;
+                    DataTable dt = new DataTable();
+                    dt = AddColumns(dt, headers);
+                    dt = AddRows(dt, sr, headers);
+
+                    
+                    return dt;
+                }
+                
+                return null;
             }
             catch (Exception)
             {
-               
+                
                 return null;
             }
         }

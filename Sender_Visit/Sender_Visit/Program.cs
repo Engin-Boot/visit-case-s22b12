@@ -8,17 +8,17 @@ namespace Sender_Visit
     {
         private static void WriteOnConsole(DataTable dt)
         {
-            int _columns = dt.Columns.Count;
+            int cols = dt.Columns.Count;
 
 
-            Console.WriteLine(_columns);
+            Console.WriteLine(cols);
             foreach (var columns in dt.Columns)
             {
                 Console.WriteLine(columns.ToString());
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                for (int j = 0; j <_columns; j++)
+                for (int j = 0; j <cols; j++)
                 {
                     Console.Write(dt.Rows[i][j] + " ");
                 }
@@ -35,6 +35,7 @@ namespace Sender_Visit
             DataTable dt = null;
             if (fileReader.CheckFileExists(path))
             {
+                
                 dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             }
             if(dt!=null)
