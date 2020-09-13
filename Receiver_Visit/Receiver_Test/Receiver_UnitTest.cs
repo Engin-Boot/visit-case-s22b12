@@ -12,8 +12,9 @@ namespace Receiver_Test
     public static class ReceiverUnitTest
     {
 
-        private static DataTable Convert(DataTable dt )
-        {    
+        // ReSharper disable once RedundantAssignment
+        private static DataTable Convert(DataTable dt)
+        {
             
             String file = "DateTimeSpaCustomer.csv";
             String path = Directory.GetCurrentDirectory();
@@ -23,31 +24,33 @@ namespace Receiver_Test
             return dt;
         }
         [Fact]
-        public static void TestCasesForAnlyticModule()
+        public static void TestCasesForAnalyticModule()
         {
 
             DataTable dt = new DataTable();
-            dt=Convert(dt);
+            dt = Convert(dt);
             CultureInfo culture = new CultureInfo("en-US");
             string dateString = "07-07-2020";
-            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None); 
+            // ReSharper disable once RedundantExplicitArrayCreation
+            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
 
 
-            double actualavghour = Analytics.AverageInHour(dt, date);
-            double expectedavghour = 2.5;
-            Assert.Equal(expectedavghour, actualavghour);
-           
-            double actualavgweek = Analytics.AvergaeInweek(dt,date);
+            // ReSharper disable IdentifierTypo
+            double actualaveragehour = Analytics.AverageInHour(dt, date);
+            double expectedaveragehour = 2.5;
+            Assert.Equal(expectedaveragehour, actualaveragehour);
+
+            double actualavgweek = Analytics.AvergaeInweek(dt, date);
             double expectedavgweek = 18;
             Assert.Equal(expectedavgweek, actualavgweek);
-            
-            int actualavgmonth= Analytics.PeakLastMonth(dt);
+
+            int actualavgmonth = Analytics.PeakLastMonth(dt);
             double expectedavgmonth = 25;
             Assert.Equal(expectedavgmonth, actualavgmonth);
 
         }
 
-        
+
 
     }
 }
