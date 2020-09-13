@@ -7,50 +7,34 @@ using System.Linq;
 
 namespace Receiver_Visit
 {   // ReSharper disable IdentifierTypo
-    public static class Analytics
+    public class Analytics
     {
-        private static List<string> GetDates(int year, int month)
+        public Dictionary<string, int> Datestorage = new Dictionary<string, int>();
+        private static List<string> GetDates(int year, int month,IDictionary<string, int> dic)
         {
-            var dates = new List<String>();
+            var dates = new List<string>();
 
             // Loop from the first day of the month until we hit the next month, moving forward a day at a time
             for (var date = new DateTime(year, month, 1); date.Month == month; date = date.AddDays(1))
             {
-                string[] datess = date.ToString(CultureInfo.CurrentCulture).Split(" ");
+                var datess = date.ToString(CultureInfo.CurrentCulture).Split(" ");
                 dates.Add(datess[0]);
-                
+                dic.Add(datess[0], 0);
             }
 
             return dates;
         }
 
-        private static Dictionary<string,int> CreateDictionary(List<string> dates,Dictionary<string,int> dic)
+        private static int FindPeak(Dictionary<string,int> dic)
         {
-            foreach(string date in dates)
-            {
-                dic.Add(date, 0);
-            }
-            return dic;
+            return dic.Keys.Select(key => dic[key]).Prepend(0).Max();
         }
 
-        private static int FindPeak(Dictionary<String,int> dic)
+        private static List<string> AddDaysofaWeek(List<string> dates,DateTime date)
         {
-            int max = 0;
-            foreach(String key in dic.Keys)
+            for (var i = 0; i < 8; i++)
             {
-                if(dic[key]>max)
-                {
-                    max = dic[key];
-                }
-            }
-            return max;
-        }
-
-        private static List<String> AddDaysofaWeek(List<String> dates,DateTime date)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                string[] adddays = date.AddDays(i).ToString(CultureInfo.CurrentCulture).Split(" ");
+                var adddays = date.AddDays(i).ToString(CultureInfo.CurrentCulture).Split(" ");
 
                 dates.Add(adddays[0]);
             }
@@ -59,9 +43,9 @@ namespace Receiver_Visit
 
         public static double AverageInHour(DataTable dt, DateTime datein)
         {
-            string[] date = datein.Date.ToString(CultureInfo.CurrentCulture).Split(" ");
-            int visitcount = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            var date = datein.Date.ToString(CultureInfo.CurrentCulture).Split(" ");
+            var visitcount = 0;
+            for (var i = 0; i < dt.Rows.Count; i++)
             {
                 var dateintable = dt.Rows[i][0];
                 if (dateintable.Equals(date[0]))
@@ -74,11 +58,11 @@ namespace Receiver_Visit
 
         public static double AvergaeInweek(DataTable dt, DateTime date)
         {
-            int visitcount = 0;
-            List<String> dates = new List<String>();
+            var visitcount = 0;
+            var dates = new List<string>();
 
             dates = AddDaysofaWeek(dates, date);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (var i = 0; i < dt.Rows.Count; i++)
             {
                 if (dates.Contains(dt.Rows[i][0]))
                 {
@@ -94,23 +78,22 @@ namespace Receiver_Visit
 
         public static int PeakLastMonth(DataTable dt)
         {
-           // Analytics obj = new Analytics();
-            DateTime date = DateTime.Now;
+            var obj = new Analytics();
+            var date = DateTime.Now;
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
-            Dictionary<String, int> datestorage = new Dictionary<String, int>();
-
-            List<String> dateInPreviousMonth = GetDates(year,previousmonth);
-            datestorage = CreateDictionary(dateInPreviousMonth, datestorage);
             
-            for (int i = 0; i < dt.Rows.Count; i++)
+            var dateInPreviousMonth = GetDates(year,previousmonth, obj.Datestorage);
+            
+            for (var i = 0; i < dt.Rows.Count; i++)
             {
                 if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    datestorage[dt.Rows[i][0].ToString() ?? throw new InvalidOperationException()] += 1;
+                    // ReSharper disable once AssignNullToNotNullAttribute
+                    obj.Datestorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
-            return FindPeak(datestorage);           
+            return FindPeak(obj.Datestorage);           
         }
 
     }
