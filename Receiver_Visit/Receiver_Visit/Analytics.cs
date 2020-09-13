@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Linq;
-using System.IO;
+
 
 namespace Receiver_Visit
 {
     public class Analytics
     {
-        Dictionary<String, int> datestorage = new Dictionary<String, int>();
-        public static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
+        readonly Dictionary<String, int> datestorage = new Dictionary<String, int>();
+        private static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
         {
             var dates = new List<String>();
 
@@ -25,7 +24,7 @@ namespace Receiver_Visit
             return dates;
         }
 
-        public static int FindPeak(Dictionary<String,int> dic)
+        private static int FindPeak(Dictionary<String,int> dic)
         {
             int max = 0;
             foreach(String key in dic.Keys)
@@ -38,20 +37,20 @@ namespace Receiver_Visit
             return max;
         }
 
-        public static List<String> AddDaysofaWeek(List<String> dates,DateTime Date)
+        private static List<String> AddDaysofaWeek(List<String> dates,DateTime date)
         {
             for (int i = 0; i < 8; i++)
             {
-                string[] adddays = Date.AddDays(i).ToString().Split(" ");
+                string[] adddays = date.AddDays(i).ToString().Split(" ");
 
                 dates.Add(adddays[0]);
             }
             return dates;
         }
 
-        public static double AverageInHour(DataTable dt, DateTime Datein)
+        public static double AverageInHour(DataTable dt, DateTime datein)
         {
-            string[] date = Datein.Date.ToString().Split(" ");
+            string[] date = datein.Date.ToString().Split(" ");
             int visitcount = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -64,12 +63,12 @@ namespace Receiver_Visit
             return visitcount/8.0;
         }
 
-        public static double AvergaeInweek(DataTable dt, DateTime Date)
+        public static double AvergaeInweek(DataTable dt, DateTime date)
         {
             int visitcount = 0;
             List<String> dates = new List<String>();
 
-            dates = AddDaysofaWeek(dates, Date);
+            dates = AddDaysofaWeek(dates, date);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (dates.Contains(dt.Rows[i][0]))
@@ -91,21 +90,17 @@ namespace Receiver_Visit
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
             
-            List<String> DateInPreviousMonth = GetDates(year,previousmonth, obj.datestorage);
+            List<String> dateInPreviousMonth = GetDates(year,previousmonth, obj.datestorage);
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (DateInPreviousMonth.Contains(dt.Rows[i][0]))
+                if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
                     obj.datestorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
-             return FindPeak(obj.datestorage);
-           
+             return FindPeak(obj.datestorage);           
         }
-
-
-
 
     }
 }
