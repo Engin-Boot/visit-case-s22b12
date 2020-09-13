@@ -9,11 +9,12 @@ using Sender_Visit;
 
 namespace Receiver_Test
 {
-    public class Receiver_UnitTest 
+    public static class ReceiverUnitTest
     {
 
-        private static DataTable Convert(DataTable dt)
-        {
+        private static DataTable Convert(DataTable dt )
+        {    
+            
             String file = "DateTimeSpaCustomer.csv";
             String path = Directory.GetCurrentDirectory();
             path += @"\" + file;
@@ -29,9 +30,9 @@ namespace Receiver_Test
             dt=Convert(dt);
             CultureInfo culture = new CultureInfo("en-US");
             string dateString = "07-07-2020";
-            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
-        
-            
+            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None); // Resharper disable once
+
+
             double actualavghour = Analytics.AverageInHour(dt, date);
             double expectedavghour = 2.5;
             Assert.Equal(expectedavghour, actualavghour);
