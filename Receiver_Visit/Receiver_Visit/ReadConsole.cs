@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Text;
 using System.Data;
 
@@ -7,12 +6,12 @@ namespace Receiver_Visit
 {
     class ReadConsole
     {
-        int Columncount;
+        int _columncount;
         public DataTable AddColumns(DataTable dt)
         {
             
-                Columncount = Convert.ToInt32(Console.ReadLine());
-                for (int i = 0; i < Columncount; i++)
+                _columncount = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < _columncount; i++)
                 {
                     dt.Columns.Add(Console.ReadLine());
                 }
