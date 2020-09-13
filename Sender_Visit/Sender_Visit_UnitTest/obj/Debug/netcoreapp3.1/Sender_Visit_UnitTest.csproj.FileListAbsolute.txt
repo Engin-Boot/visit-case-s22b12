@@ -111,4 +111,3 @@ C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit_Unit
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit_UnitTest\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit_UnitTest\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit_UnitTest\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
-C:\Users\320090678\source\repos\visit-case-s22b12\Sender_Visit\Sender_Visit_UnitTest\obj\Debug\netcoreapp3.1\Sender_Visit_UnitTest.csproj.CoreCompileInputs.cache

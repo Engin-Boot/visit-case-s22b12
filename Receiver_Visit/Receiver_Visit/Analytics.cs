@@ -7,10 +7,9 @@ using System.Linq;
 
 namespace Receiver_Visit
 {   // ReSharper disable IdentifierTypo
-    public class Analytics
+    public static class Analytics
     {
-        public Dictionary<String, int> Datestorage = new Dictionary<String, int>();
-        private static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
+        private static List<string> GetDates(int year, int month)
         {
             var dates = new List<String>();
 
@@ -19,10 +18,19 @@ namespace Receiver_Visit
             {
                 string[] datess = date.ToString(CultureInfo.CurrentCulture).Split(" ");
                 dates.Add(datess[0]);
-                dic.Add(datess[0], 0);
+                
             }
 
             return dates;
+        }
+
+        private static Dictionary<string,int> CreateDictionary(List<string> dates,Dictionary<string,int> dic)
+        {
+            foreach(string date in dates)
+            {
+                dic.Add(date, 0);
+            }
+            return dic;
         }
 
         private static int FindPeak(Dictionary<String,int> dic)
@@ -86,21 +94,23 @@ namespace Receiver_Visit
 
         public static int PeakLastMonth(DataTable dt)
         {
-            Analytics obj = new Analytics();
+           // Analytics obj = new Analytics();
             DateTime date = DateTime.Now;
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
-            
-            List<String> dateInPreviousMonth = GetDates(year,previousmonth, obj.Datestorage);
+            Dictionary<String, int> datestorage = new Dictionary<String, int>();
+
+            List<String> dateInPreviousMonth = GetDates(year,previousmonth);
+            datestorage = CreateDictionary(dateInPreviousMonth, datestorage);
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    obj.Datestorage[dt.Rows[i][0].ToString() ?? throw new InvalidOperationException()] += 1;
+                    datestorage[dt.Rows[i][0].ToString() ?? throw new InvalidOperationException()] += 1;
                 }
             }
-            return FindPeak(obj.Datestorage);           
+            return FindPeak(datestorage);           
         }
 
     }

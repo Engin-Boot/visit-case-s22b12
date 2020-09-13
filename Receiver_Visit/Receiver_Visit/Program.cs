@@ -42,7 +42,7 @@ namespace Receiver_Visit
         }
 
 
-        static void Main(string[] args)
+        static void Main()
         {
             DataTable dt = new DataTable();
             try
@@ -66,7 +66,7 @@ namespace Receiver_Visit
                 }
                 catch (Exception)
                 {
-                  
+                    Console.WriteLine("Some error occured");                  
 
                 }
             }
@@ -74,7 +74,7 @@ namespace Receiver_Visit
             {
                 CultureInfo culture = new CultureInfo("en-US");
                 string dateString = "07-01-2020";
-                DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
+                DateTime date = DateTime.ParseExact(dateString, new[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
 
                 if (dt != null)
                 {
@@ -90,7 +90,6 @@ namespace Receiver_Visit
 
                     FileExistsfunction(pathtoresultfile);
                     dtresults = CreateDataTableResults(dtresults, avghour, avgweek, avgpeak);
-
                     DataTableTocsv.ToCsv(dtresults, pathtoresultfile);
                     Console.WriteLine("The result is stored in " + pathtoresultfile);
                 }
