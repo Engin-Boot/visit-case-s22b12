@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace Receiver_Visit
 {   // ReSharper disable IdentifierTypo
-    public class Analytics
+    public static class Analytics
     {
-        public Dictionary<string, int> Datestorage = new Dictionary<string, int>();
-        private static List<string> GetDates(int year, int month,IDictionary<string, int> dic)
+       
+        private static List<string> GetDates(int year, int month)
         {
             var dates = new List<string>();
 
@@ -19,10 +19,19 @@ namespace Receiver_Visit
             {
                 var datess = date.ToString(CultureInfo.CurrentCulture).Split(" ");
                 dates.Add(datess[0]);
-                dic.Add(datess[0], 0);
+                
             }
 
             return dates;
+        }
+
+        private static Dictionary<string,int> CreateDictionary(List<String> dates,Dictionary<String,int> dic)
+        {
+            foreach(String date in dates)
+            {
+                dic.Add(date,0);
+            }
+            return dic;
         }
 
         private static int FindPeak(Dictionary<string,int> dic)
@@ -78,22 +87,23 @@ namespace Receiver_Visit
 
         public static int PeakLastMonth(DataTable dt)
         {
-            var obj = new Analytics();
+          
             var date = DateTime.Now;
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
             
-            var dateInPreviousMonth = GetDates(year,previousmonth, obj.Datestorage);
-            
+            var dateInPreviousMonth = GetDates(year,previousmonth);
+            Dictionary<string, int> datastorage= new Dictionary<string, int>();
+            datastorage = CreateDictionary(dateInPreviousMonth, datastorage);
             for (var i = 0; i < dt.Rows.Count; i++)
             {
                 if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
                     // ReSharper disable once AssignNullToNotNullAttribute
-                    obj.Datestorage[dt.Rows[i][0].ToString()] += 1;
+                    datastorage[dt.Rows[i][0].ToString()] += 1;
                 }
             }
-            return FindPeak(obj.Datestorage);           
+            return FindPeak(datastorage);           
         }
 
     }

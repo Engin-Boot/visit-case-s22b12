@@ -78,9 +78,13 @@ namespace Receiver_Visit
 
                 if (dt != null)
                 {
+
+                    
                     double avghour = Analytics.AverageInHour(dt, date);
                     double avgweek = Analytics.AvergaeInweek(dt, date);
                     int avgpeak = Analytics.PeakLastMonth(dt);
+
+                    
 
                     DataTable dtresults = new DataTable();
 
@@ -91,6 +95,7 @@ namespace Receiver_Visit
                     FileExistsfunction(pathtoresultfile);
                     dtresults = CreateDataTableResults(dtresults, avghour, avgweek, avgpeak);
                     DataTableTocsv.ToCsv(dtresults, pathtoresultfile);
+                   
                     Console.WriteLine("The result is stored in " + pathtoresultfile);
                 }
                 else

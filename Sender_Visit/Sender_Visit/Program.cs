@@ -9,8 +9,6 @@ namespace Sender_Visit
         private static void WriteOnConsole(DataTable dt)
         {
             int cols = dt.Columns.Count;
-
-
             Console.WriteLine(cols);
             foreach (var columns in dt.Columns)
             {
@@ -20,9 +18,8 @@ namespace Sender_Visit
             {
                 for (int j = 0; j <cols; j++)
                 {
-                    Console.Write(dt.Rows[i][j] + " ");
+                    Console.WriteLine(dt.Rows[i][j]);
                 }
-                Console.WriteLine();
             }
         }
         static void Main()

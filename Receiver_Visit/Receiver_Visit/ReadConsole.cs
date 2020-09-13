@@ -23,7 +23,7 @@ namespace Receiver_Visit
                 string input = Console.ReadLine();
                 while (!string.IsNullOrEmpty(input))
                 {
-                    dt.Rows.Add(Console.ReadLine());
+                    dt.Rows.Add(input);
                     input = Console.ReadLine();
                 }
                 return dt;

@@ -34,7 +34,6 @@ namespace Receiver_Test
             // ReSharper disable once RedundantExplicitArrayCreation
             DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None);
 
-
             // ReSharper disable IdentifierTypo
             double actualaveragehour = Analytics.AverageInHour(dt, date);
             double expectedaveragehour = 2.5;
