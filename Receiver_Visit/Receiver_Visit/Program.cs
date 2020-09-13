@@ -9,7 +9,7 @@ namespace Receiver_Visit
 {
 
     
-    class Program
+   public static class Program
     {
 
         static void FileExistsfunction(String file)
@@ -28,7 +28,7 @@ namespace Receiver_Visit
             }
 
         }
-        static public DataTable CreateDataTableResults(DataTable dtresults,double avghour,double avgweek,int avgpeak)
+        private static DataTable CreateDataTableResults(DataTable dtresults,double avghour,double avgweek,int avgpeak)
         {
             dtresults.Columns.Add("FunctionName");
             dtresults.Columns.Add("Result");
@@ -66,6 +66,7 @@ namespace Receiver_Visit
                 }
                 catch (Exception)
                 {
+                  
 
                 }
             }
@@ -77,8 +78,7 @@ namespace Receiver_Visit
 
                 if (dt != null)
                 {
-
-                    double avghour = Analytics.AverageInHour(dt, date);;
+                    double avghour = Analytics.AverageInHour(dt, date);
                     double avgweek = Analytics.AvergaeInweek(dt, date);
                     int avgpeak = Analytics.PeakLastMonth(dt);
 
@@ -91,7 +91,7 @@ namespace Receiver_Visit
                     FileExistsfunction(pathtoresultfile);
                     dtresults = CreateDataTableResults(dtresults, avghour, avgweek, avgpeak);
 
-                    DataTableTOCSV.ToCSV(dtresults, pathtoresultfile);
+                    DataTableTocsv.ToCsv(dtresults, pathtoresultfile);
                     Console.WriteLine("The result is stored in " + pathtoresultfile);
                 }
                 else
