@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 
 
 namespace Receiver_Visit
-{
+{   // ReSharper disable IdentifierTypo
     public class Analytics
     {
-        readonly Dictionary<String, int> datestorage = new Dictionary<String, int>();
+        public Dictionary<String, int> Datestorage = new Dictionary<String, int>();
         private static List<string> GetDates(int year, int month,Dictionary<String,int> dic)
         {
             var dates = new List<String>();
@@ -16,7 +17,7 @@ namespace Receiver_Visit
             // Loop from the first day of the month until we hit the next month, moving forward a day at a time
             for (var date = new DateTime(year, month, 1); date.Month == month; date = date.AddDays(1))
             {
-                string[] datess = date.ToString().Split(" ");
+                string[] datess = date.ToString(CultureInfo.CurrentCulture).Split(" ");
                 dates.Add(datess[0]);
                 dic.Add(datess[0], 0);
             }
@@ -41,7 +42,7 @@ namespace Receiver_Visit
         {
             for (int i = 0; i < 8; i++)
             {
-                string[] adddays = date.AddDays(i).ToString().Split(" ");
+                string[] adddays = date.AddDays(i).ToString(CultureInfo.CurrentCulture).Split(" ");
 
                 dates.Add(adddays[0]);
             }
@@ -50,7 +51,7 @@ namespace Receiver_Visit
 
         public static double AverageInHour(DataTable dt, DateTime datein)
         {
-            string[] date = datein.Date.ToString().Split(" ");
+            string[] date = datein.Date.ToString(CultureInfo.CurrentCulture).Split(" ");
             int visitcount = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -90,16 +91,16 @@ namespace Receiver_Visit
             var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
             
-            List<String> dateInPreviousMonth = GetDates(year,previousmonth, obj.datestorage);
+            List<String> dateInPreviousMonth = GetDates(year,previousmonth, obj.Datestorage);
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (dateInPreviousMonth.Contains(dt.Rows[i][0]))
                 {
-                    obj.datestorage[dt.Rows[i][0].ToString()] += 1;
+                    obj.Datestorage[dt.Rows[i][0].ToString() ?? throw new InvalidOperationException()] += 1;
                 }
             }
-             return FindPeak(obj.datestorage);           
+            return FindPeak(obj.Datestorage);           
         }
 
     }
