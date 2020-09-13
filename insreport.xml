@@ -17,7 +17,6 @@
     <IssueType Id="FieldCanBeMadeReadOnly.Local" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Field can be made readonly" Description="Field can be made readonly: Private accessibility" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=FieldCanBeMadeReadOnly.Local" />
     <IssueType Id="InconsistentNaming" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Inconsistent Naming" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=InconsistentNaming" />
     <IssueType Id="MemberCanBePrivate.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Member can be made private" Description="Member can be made private: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=MemberCanBePrivate.Global" />
-    <IssueType Id="PossibleNullReferenceException" Category="Potential Code Quality Issues" CategoryId="CodeSmell" Description="Possible 'System.NullReferenceException'" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=PossibleNullReferenceException" />
     <IssueType Id="RedundantAssignment" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Assignment is not used" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantAssignment" />
     <IssueType Id="RedundantExplicitArrayCreation" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant explicit type in array creation" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantExplicitArrayCreation" />
     <IssueType Id="RedundantUsingDirective" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant using directive" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantUsingDirective" />
@@ -61,11 +60,6 @@
       <Issue TypeId="RedundantUsingDirective" File="Receiver_Visit\Receiver_Visit\ReadConsole.cs" Offset="15-48" Line="2" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Receiver_Visit\Receiver_Visit\ReadConsole.cs" Offset="50-68" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="InconsistentNaming" File="Receiver_Visit\Receiver_Visit\ReadConsole.cs" Offset="163-174" Line="10" Message="Name 'Columncount' does not match rule 'Instance fields (private)'. Suggested name is '_columncount'." />
-    </Project>
-    <Project Name="Sender_Visit">
-      <Issue TypeId="AssignNullToNotNullAttribute" File="Sender_Visit\Sender_Visit\CsvToDatatable.cs" Offset="740-753" Line="29" Message="Possible 'null' assignment to non-nullable entity" />
-      <Issue TypeId="PossibleNullReferenceException" File="Sender_Visit\Sender_Visit\CsvToDatatable.cs" Offset="1677-1690" Line="62" Message="Possible 'System.NullReferenceException'" />
-      <Issue TypeId="InconsistentNaming" File="Sender_Visit\Sender_Visit\Program.cs" Offset="208-216" Line="11" Message="Name '_columns' does not match rule 'Local variables'. Suggested name is 'columns'." />
     </Project>
   </Issues>
 </Report>

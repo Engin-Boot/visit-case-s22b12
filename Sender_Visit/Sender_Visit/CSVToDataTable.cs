@@ -26,10 +26,10 @@ namespace Sender_Visit
         }
         private static DataTable AddNewRows(DataTable dt,String[] header,StreamReader sr)
         {
-            var stringreader = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-            if (stringreader != null)
+            var readline = sr.ReadLine();
+            if (readline!= null)
             {
-                
+                var stringreader = Regex.Split(readline, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
                 string[] rows = stringreader;
                 DataRow dr = dt.NewRow();
                 for (int i = 0; i < header.Length; i++)
@@ -65,10 +65,10 @@ namespace Sender_Visit
             {
                 StreamReader sr = new StreamReader(strFilePath);
 
-                var stringreader = sr.ReadLine().Split(',');
-                if (stringreader != null)
-                {
-                    
+                var readline = sr.ReadLine();
+                if (readline!=null)
+                { 
+                    var stringreader = readline.Split(',');
                     string[] headers = stringreader;
                     DataTable dt = new DataTable();
                     dt = AddColumns(dt, headers);
@@ -77,7 +77,7 @@ namespace Sender_Visit
                     
                     return dt;
                 }
-                
+            
                 return null;
             }
             catch (Exception)
