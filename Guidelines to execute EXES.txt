@@ -1,0 +1,12 @@
+1. If both the Sender_Visit file and Receiver_Visit files are executed independently then  
+
+Sender_Visit will print all the entities in the csv file with the number of colums and columns names on the console
+
+Receiver_Visit will wait for an input thus provide a non numeric input and press enter then an already stored csv will be read and you will get a notification where the results file is stored
+
+
+2. If  both the Sender_Visit file and Receiver_Visit files are operated with piping, refer to CONSOLE Pic in the parent directory for details regarding piping execution.
+
+It will give the desired input at the new location
+
+Please refer the location you get on the console for the file.
