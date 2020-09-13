@@ -30,7 +30,7 @@ namespace Receiver_Test
             dt=Convert(dt);
             CultureInfo culture = new CultureInfo("en-US");
             string dateString = "07-07-2020";
-            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None); // Resharper disable once
+            DateTime date = DateTime.ParseExact(dateString, new string[] { "MM.dd.yyyy", "MM-dd-yyyy", "MM/dd/yyyy" }, culture, DateTimeStyles.None); 
 
 
             double actualavghour = Analytics.AverageInHour(dt, date);
