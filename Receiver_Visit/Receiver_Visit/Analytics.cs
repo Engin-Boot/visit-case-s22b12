@@ -89,7 +89,7 @@ namespace Receiver_Visit
         {
           
             var date = DateTime.Now;
-            var previousmonth = Convert.ToInt32(date.AddMonths(-2).Month.ToString());
+            var previousmonth = Convert.ToInt32(date.AddMonths(-1).Month.ToString());
             var year = Convert.ToInt32(DateTime.Now.Year.ToString());
             
             var dateInPreviousMonth = GetDates(year,previousmonth);

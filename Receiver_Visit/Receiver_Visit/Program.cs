@@ -32,26 +32,21 @@ namespace Receiver_Visit
         {
             dtresults.Columns.Add("FunctionName");
             dtresults.Columns.Add("Result");
-
             dtresults.Rows.Add("AverageinHour", avghour);
             dtresults.Rows.Add("Averageinweek", avgweek);
             dtresults.Rows.Add("PeakLastMonth", avgpeak);
-
             return dtresults;
-
         }
-
 
         static void Main()
         {
             DataTable dt = new DataTable();
             try
             {
-
+                Console.WriteLine("Input any not numeric string or Press Enter to execute this module without Console Redirection");
                 ReadConsole datatablereader = new ReadConsole();
                 dt = datatablereader.AddColumns(dt);
                 dt = datatablereader.AddRows(dt);
-                Console.WriteLine("The file is Read using Console Redirection");
             }
             catch (Exception)
             {
@@ -83,8 +78,6 @@ namespace Receiver_Visit
                     double avghour = Analytics.AverageInHour(dt, date);
                     double avgweek = Analytics.AvergaeInweek(dt, date);
                     int avgpeak = Analytics.PeakLastMonth(dt);
-
-                    
 
                     DataTable dtresults = new DataTable();
 

@@ -8,7 +8,6 @@ namespace Receiver_Visit
         int _columncount;
         public DataTable AddColumns(DataTable dt)
         {
-            
                 _columncount = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < _columncount; i++)
                 {
