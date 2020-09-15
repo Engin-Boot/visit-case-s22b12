@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Globalization;
 using Sender_Visit;
+using System.Linq;
 
 
 namespace Receiver_Test
@@ -47,8 +48,34 @@ namespace Receiver_Test
             double expectedavgmonth = 25;
             Assert.Equal(expectedavgmonth, actualavgmonth);
 
+
+        }
+         
+        [Fact]
+        public static void ProgramReturnsCorrectcsv()
+        {
+            DataTable dt = new DataTable();
+            dt = Convert(dt);
+
+            String storingresultsfile = "Results.csv";
+            String pathtoresultfile = Directory.GetCurrentDirectory();
+            pathtoresultfile += @"\" + storingresultsfile;
+            Assert.True(Receiver_Visit.DataTableTocsv.ToCsv(dt, pathtoresultfile));
+
         }
 
+        [Fact]
+        public static void CheckDatatableColumnName()
+        {
+            DataTable dt = new DataTable();
+            dt = Convert(dt);
+            var actual = (from DataColumn x in dt.Columns
+                select x.ColumnName).ToArray();
+
+            Assert.Contains("Date", actual[0]);
+            Assert.Contains("Time", actual[1]);
+
+        }
 
 
     }
