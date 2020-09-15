@@ -79,11 +79,8 @@ namespace Receiver_Visit
                 }
                     
             }
-            return visitcount / 7.0;
+            return visitcount/7.0;
         }
-
-
-
 
         public static int PeakLastMonth(DataTable dt)
         {

@@ -6,7 +6,7 @@ using System.IO;
 namespace Sender_Visit
 {
 
-    public class FileReader
+    public class FileChecker
     {
         bool _fileexists = true;
         private void CheckFilename(String file)

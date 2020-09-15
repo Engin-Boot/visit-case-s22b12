@@ -60,7 +60,7 @@ namespace Receiver_Test
             String storingresultsfile = "Results.csv";
             String pathtoresultfile = Directory.GetCurrentDirectory();
             pathtoresultfile += @"\" + storingresultsfile;
-            Assert.True(Receiver_Visit.DataTableTocsv.ToCsv(dt, pathtoresultfile));
+            Assert.True(DataTableTocsv.ToCsv(dt, pathtoresultfile));
 
         }
 

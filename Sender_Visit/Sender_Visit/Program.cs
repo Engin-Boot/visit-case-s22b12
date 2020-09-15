@@ -27,7 +27,7 @@ namespace Sender_Visit
             String file = System.Configuration.ConfigurationManager.AppSettings["filename"];
             String path = Directory.GetCurrentDirectory();
             path += @"\" + file;
-            FileReader fileReader = new FileReader();
+            FileChecker fileReader = new FileChecker();
 
             DataTable dt = null;
             if (fileReader.CheckFileExists(path))

@@ -7,10 +7,9 @@ namespace Sender_Visit_UnitTest
 {
     public static class SenderUnittest
     {
-        private static string ReturnPath()
+        private static string ReturnPath(String file)
         {
             
-            string file = "DateTimeSpaCustomer.csv";
             string path = Directory.GetCurrentDirectory();
             path += @"\" + file;
             return path;
@@ -18,8 +17,8 @@ namespace Sender_Visit_UnitTest
         [Fact]
         public static void WhenFileisInputedThenItsExistenceisChecked()
         {
-            var fr = new FileReader();
-            String path = ReturnPath();
+            var fr = new FileChecker();
+            String path = ReturnPath("DateTimeSpaCustomer.csv");
             Assert.True(fr.CheckFileExists(path));
             
         }
@@ -28,7 +27,7 @@ namespace Sender_Visit_UnitTest
         public static void WhenCsvFileisConvertedThenDataTableMustBeNotNull()
         {
 
-            String path = ReturnPath();
+            String path = ReturnPath("DateTimeSpaCustomer.csv");
             System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.False(dt == null) ;           
         }
@@ -37,11 +36,20 @@ namespace Sender_Visit_UnitTest
         public static void WhenDatatableisReturnedThenNumberofColumnsMustbe2()
         {
 
-            String path = ReturnPath();
+            String path = ReturnPath("DateTimeSpaCustomer.csv");
             System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
             Assert.True(dt.Columns.Count == 2);
         }
- 
+
+        [Fact]
+        public static void WhenWrongFileisInputedThenDataTableMustBeNull()
+        {
+            String path = ReturnPath("Someone.csv");
+            System.Data.DataTable dt = CsvToDatatable.ConvertCsvtoDatatable(path);
+            Assert.True(dt == null);
+        }
+
+
     }
 
 }
